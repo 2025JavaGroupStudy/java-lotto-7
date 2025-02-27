@@ -1,6 +1,7 @@
 package lotto.model;
 
 import java.util.Set;
+import lotto.util.DetailErrorMessage;
 
 public class Game {
     private Set<Integer> jackpotNumbers;
@@ -16,6 +17,9 @@ public class Game {
     }
 
     public void setBonus(int bonus) {
+        if (jackpotNumbers.contains(bonus)) {
+            throw new IllegalArgumentException(DetailErrorMessage.DUPLICATED.getMessage());
+        }
         this.bonus = bonus;
     }
 
