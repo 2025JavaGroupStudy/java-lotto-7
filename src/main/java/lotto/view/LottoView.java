@@ -38,4 +38,8 @@ public class LottoView {
                 .forEach(i -> System.out.println(prizes[i].getMessage() + resultList[i] + "개"));
         System.out.println(String.format(SystemMessage.RESULT_PROFIT_GUIDE.getMessage(), profitPercent));
     }
+
+    public void outputCaughtError(String errorMessage) {
+        System.out.println(errorMessage);
+    }
 }

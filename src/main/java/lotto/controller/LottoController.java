@@ -37,7 +37,7 @@ public class LottoController {
             lottoService.setPlayer(player);
             return false;
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            lottoView.outputCaughtError(e.getMessage());
             return true;
         }
     }
@@ -50,7 +50,7 @@ public class LottoController {
             lottoService.setGame(gameStep);
             return false;
         } catch (Exception e) {
-            System.out.println(MajorErrorMessage.LOTTONUM_WRONG.getMessage() + e.getMessage());
+            lottoView.outputCaughtError(MajorErrorMessage.LOTTONUM_WRONG.getMessage() + e.getMessage());
             return true;
         }
     }
